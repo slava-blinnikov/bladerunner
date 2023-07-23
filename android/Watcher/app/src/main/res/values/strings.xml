@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Watcher</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="default_crew_name">Account is not defined</string>
+
+    <string name="server_settings_pref_key" translatable="false">pref_server_hostport_key</string>
+    <string name="text_default_host" translatable="false">xenohead.no-ip.org</string>
+    <string name="text_default_host_test" translatable="false">192.168.1.3</string>
+    <string name="text_default_port" translatable="false">7682</string>
+    <string name="user_settings_pref_key" translatable="false">pref_user_logon_key</string>
+    <string name="server_host_preference_key" translatable="false">pref_server_host_key</string>
+    <string name="server_port_preference_key" translatable="false">pref_server_port_key</string>
+
+    <string name="crew_name_preference_key" translatable="false">pref_crew_name_key</string>
+    <string name="crew_watcher_preference_key" translatable="false">pref_crew_watcher_key</string>
+    <string name="crew_password_preference_key" translatable="false">pref_crew_password_key</string>
+    <string name="crew_ava_changetime_preference_key" translatable="false">pref_crew_ava_changetime_key</string>
+    <string name="crew_ava_filename" translatable="false">crew.png</string>
+
+    <string name="member_name_template_preference_key" translatable="false">pref_member_%1$d_name_key</string>
+    <string name="member_ava_changetime_template_preference_key" translatable="false">pref_member_%1$d_ava_changetime_key</string>
+    <string name="member_ava_filename_template" translatable="false">member_%1$d.png</string>
+
+    <string name="current_member_pref_key" translatable="false">pref_current_member_key</string>
+    <string name="speed_template">%1$d km/h</string>
+    <string name="members_list_title">Family</string>
+
+    <string name="no_ava_title" translatable="false">no_avatar</string>
+    <string name="unknown_member_title">Unknown</string>
+    <string name="tracking_permission_allow">Tracking allowed</string>
+    <string name="tracking_permission_forbid">Tracking forbidden</string>
+    <string name="recording_permission_allow">Recording allowed</string>
+    <string name="recording_permission_forbid">Recording forbidden</string>
+</resources>

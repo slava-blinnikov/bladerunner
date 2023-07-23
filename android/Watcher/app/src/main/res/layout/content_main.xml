@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior"
+              tools:context="slava.watcher.MainActivity"
+              tools:showIn="@layout/app_bar_main"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:paddingBottom="@dimen/null_margin"
+              android:paddingLeft="@dimen/null_margin"
+              android:paddingRight="@dimen/null_margin"
+              android:paddingTop="@dimen/null_margin"
+              android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<slava.beacon.HostPreference
+		android:key="@string/server_settings_pref_key"
+		android:title="@string/server_settings_caption"
+		android:dialogTitle="@string/server_settings_caption"
+		android:summary="@string/text_host_summary"
+		android:persistent="false"
+		android:defaultValue="@string/text_default_host"/>
+
+	<slava.beacon.UserPreference
+		android:key="@string/user_settings_pref_key"
+		android:title="@string/user_settings_caption"
+		android:dialogTitle="@string/user_settings_caption"
+		android:summary="@string/text_user_summary"
+		android:persistent="false"
+		android:defaultValue=""/>
+
+	<CheckBoxPreference
+		android:key="@string/start_beeping_notify_preference_key"
+		android:title="@string/start_beeping_notify_caption"
+		android:summary="@string/start_beeping_notify_summary"
+		android:defaultValue="false"/>
+
+	<RingtonePreference
+		android:key="@string/start_beeping_ringtone_preference_key"
+		android:title="@string/start_beeping_ringtone_caption"
+		android:dependency="@string/start_beeping_notify_preference_key"
+		android:ringtoneType="notification"
+		android:defaultValue="content://settings/system/notification_sound"/>
+
+	<CheckBoxPreference
+		android:key="@string/stop_beeping_notify_preference_key"
+		android:title="@string/stop_beeping_notify_caption"
+		android:summary="@string/stop_beeping_notify_summary"
+		android:defaultValue="false"/>
+
+	<RingtonePreference
+		android:key="@string/stop_beeping_ringtone_preference_key"
+		android:title="@string/stop_beeping_ringtone_caption"
+		android:dependency="@string/stop_beeping_notify_preference_key"
+		android:ringtoneType="notification"
+		android:defaultValue="content://settings/system/notification_sound"/>
+
+</PreferenceScreen>

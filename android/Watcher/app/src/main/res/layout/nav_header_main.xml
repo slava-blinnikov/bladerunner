@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/nav_header_height"
+              android:background="@drawable/side_nav_bar"
+              android:gravity="bottom"
+              android:orientation="horizontal"
+              android:paddingBottom="@dimen/min_vertical_margin"
+              android:paddingLeft="@dimen/min_vertical_margin"
+              android:paddingRight="@dimen/min_vertical_margin"
+              android:paddingTop="@dimen/min_horizontal_margin"
+              android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <ImageView
+        android:id="@+id/imgCrew"
+        android:layout_width="@dimen/ava_size"
+        android:layout_height="@dimen/ava_size"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:paddingRight="@dimen/crew_name_spacing"
+        android:src="@drawable/no_crew_avatar"/>
+    <CheckBox
+        android:id="@+id/chbCrew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="@dimen/crew_name_spacing"
+        android:text="@string/default_crew_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:checked="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:button="@drawable/online_state_control"/>
+</LinearLayout>

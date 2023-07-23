@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE eDocument>
+<root>
+	<server port="7682" login_timeout="15" ping_timeout="10" schedule_timeout="60" www_path="/home/slava/projects/www"/>
+	<database host="127.0.0.1" port="5432" name="bladerunner" user="dispatcher" password="qwerty">
+		<query type="get_crew_role"><![CDATA[
+			select rolname, crew from meta.crews where usrname = :crew_name]]>
+		</query>
+		<query type="get_member_role"><![CDATA[
+			select mbr.rolname, mbr.member, crw.crew
+			from meta.members as mbr
+			join meta.crews as crw using(crew)
+			where crw.usrname = :crew_name and mbr.usrname = :member_name]]>
+		</query>
+		<query type="get_crew_id"><![CDATA[
+			select crew from meta.v_crews() where rolname = :rolname]]>
+		</query>
+		<query type="get_member_id"><![CDATA[
+			select	mbr.member,
+				crw.rolname,
+				mbr.tracking_period,
+				mbr.perm_tracking,
+				mbr.perm_recording,
+				mbr.recording
+			from meta.v_members() as mbr
+			join meta.v_crews() as crw using(crew)
+			where mbr.rolname = :rolname]]>
+		</query>
+		<query type="get_crew_avatar"><![CDATA[
+			select	(avatar->>'changetime')::timestamp as changetime,
+				avatar->>'filename' as filename,
+				rolname
+			from meta.v_crews()
+			where crew = :crew]]>
+		</query>
+		<query type="get_member_avatar"><![CDATA[
+			select	(mbr.avatar->>'changetime')::timestamp as changetime,
+				mbr.avatar->>'filename' as filename,
+				crw.rolname || '/' || mbr.rolname
+			from meta.v_members() as mbr
+			join meta.v_crews() as crw using(crew)
+			where mbr.member = :member]]>
+		</query>
+		<query type="get_members_list"><![CDATA[
+			select member from meta.v_members()]]>
+		</query>
+		<query type="get_member"><![CDATA[
+			select	(avatar->>'changetime')::timestamp as changetime,
+				perm_tracking,
+				perm_recording,
+				tracking_period,
+				usrname
+			from meta.v_members()
+			where member = :member]]>
+		</query>
+		<query type="set_location"><![CDATA[
+			select archive.set_current_location(:time, :latitude, :longitude, :speed, :gps)]]>
+		</query>
+		<query type="set_perm_tracking"><![CDATA[
+			select meta.set_tracking_permission(:perm_tracking)]]>
+		</query>
+		<query type="set_perm_recording"><![CDATA[
+			select meta.set_recording_permission(:perm_recording)]]>
+		</query>
+		<query type="schedule_recording"><![CDATA[
+			select archive.schedule_recording()]]>
+		</query>
+		<query type="get_member_recording"><![CDATA[
+			select recording
+			from meta.members as mbr
+			where mbr.member = :member]]>
+		</query>
+	</database>
+</root>

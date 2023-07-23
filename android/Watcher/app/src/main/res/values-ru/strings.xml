@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Наблюдение</string>
+	<string name="action_settings">Настройки</string>
+	<string name="default_crew_name">Учётные данные не заданы</string>
+	<string name="navigation_drawer_close">Закрыть</string>
+	<string name="navigation_drawer_open">Открыть</string>
+	<string name="speed_template">%1$d км/ч</string>
+	<string name="members_list_title">Семья</string>
+	<string name="unknown_member_title">Неизвестный</string>
+	<string name="tracking_permission_allow">Слежение разрешено</string>
+	<string name="tracking_permission_forbid">Слежение запрещено</string>
+	<string name="recording_permission_allow">Запись разрешена</string>
+	<string name="recording_permission_forbid">Запись запрещена</string>
+</resources>

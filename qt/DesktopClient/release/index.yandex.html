@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Bladerunner control panel</title>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script type="text/javascript">
+			var ydxMap;
+			var ydxMemberMarker;
+
+			ymaps.ready(init);
+			
+			function init ()
+			{
+				ydxMap = new ymaps.Map('map',
+				{
+					center: [53.6729, 55.957],
+					zoom: 15,
+					controls: ['zoomControl', 'typeSelector']
+				});
+
+				ydxMemberMarker = new ymaps.Placemark([53.6729, 55.957],
+				{
+					hintContent: '',
+				},
+				{
+					iconLayout: 'default#image',
+					iconImageHref: 'images/small_car.png',
+					iconImageSize: [32, 32],
+					iconImageOffset: [-16, -16]
+				});
+			}
+			
+			function setMapGeometry(width, height)
+			{
+				divMap = document.getElementById('map');
+				divMap.style.width = width;
+				divMap.style.height = height;
+			}
+			
+			function showMarker(latitude, longitude)
+			{
+				ydxMap.geoObjects.add(ydxMemberMarker);
+				moveMarker(latitude, longitude);
+			}
+			
+			function hideMarker()
+			{
+				ydxMap.geoObjects.remove(ydxMemberMarker);
+			}
+
+			function moveMarker(latitude, longitude)
+			{
+				ydxMemberMarker.geometry.setCoordinates([latitude, longitude]);
+				ydxMap.panTo([latitude, longitude], {flying: true, duration: 1000});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="map" style="width:1024px; height:768px"></div>
+	</body>
+</html>

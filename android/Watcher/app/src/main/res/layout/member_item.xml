@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+	<ImageView android:id="@+id/imgMember"
+	           android:layout_width="@dimen/ava_small_size"
+	           android:layout_height="@dimen/ava_small_size"
+	           android:src="@drawable/no_member_avatar"
+	           android:contentDescription="@string/no_ava_title"/>
+</LinearLayout>
